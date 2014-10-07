@@ -1,0 +1,24 @@
+* JDust
+
+  Java bindings to [[https://code.google.com/p/v8/][V8]] to render [[http://linkedin.github.io/dustjs/][Dustjs]] templates
+
+  The purpose of this project is to facilitate faster compilation and
+  rendering of Dustjs templates from a Java environment than was
+  previously possible through the use of [[https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino][Rhino]]. The goal of the
+  project is to keep the native bindings as simple and safe as
+  possible to keep the majority of the logic in Java.
+
+* Status
+
+  Currently this project is a work in progress. Not only is it not
+  recommended for use in production environments but it also probably
+  won't do anything you actually need it to do.
+
+* Building
+  TODO
+
+* Usage
+  TODO
+
+* License
+  Information about the license is found in file [[LICENSE]].

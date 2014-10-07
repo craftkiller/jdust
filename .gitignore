@@ -1,0 +1,10 @@
+/bin/
+*.class
+*.make
+Makefile
+cdust
+cppdust
+*.a
+*.so
+java/buzz_fizz_jdust_JDust.h
+obj/
