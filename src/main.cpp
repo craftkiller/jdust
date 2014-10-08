@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     result_store state;
 
-    int ret = compile_template(state, script_contents[0].c_str(), script_contents[1].c_str());
+    int ret = render_template(state, script_contents[0].c_str(), script_contents[1].c_str(), "{'title': 'Hello Title'}");
     if (ret != 0)
     {
         std::cerr << "Return code: " << ret << "\n";
