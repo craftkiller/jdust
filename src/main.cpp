@@ -20,23 +20,22 @@ std::string load_file(const char* file_name)
 
 int main(int argc, char **argv) 
 {
-    if (argc < 2)
+    if (argc != 3)
     {
-        std::cout << "Usage: " << argv[0] << " <script file>\n";
+        std::cout << "Usage: " << argv[0] << " <dustjs file> <dust template file>\n";
         return 0;
     }
 
     // Load file(s)
-    std::string script_contents;
+    std::string script_contents[2];
     for (int i = 1; i < argc; ++i)
     {
-        std::string file_contents = load_file(argv[i]);
-        script_contents += file_contents;
+        script_contents[i-1] = load_file(argv[i]);
     }
 
     result_store state;
 
-    int ret = execute_js(state, script_contents.c_str());
+    int ret = compile_template(state, script_contents[0].c_str(), script_contents[1].c_str());
     if (ret != 0)
     {
         std::cerr << "Return code: " << ret << "\n";
