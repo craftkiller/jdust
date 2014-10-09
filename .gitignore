@@ -4,6 +4,7 @@
 Makefile
 cdust
 cppdust
+cppperf
 *.a
 *.so
 java/buzz_fizz_jdust_JDust.h

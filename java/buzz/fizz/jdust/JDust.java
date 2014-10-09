@@ -35,7 +35,7 @@ public class JDust
         System.out.println(out);
     }
     
-    private String renderDust(String fullDust, String dustTemplate, String dustContext)
+    public String renderDust(String fullDust, String dustTemplate, String dustContext)
     {
         JState state = new JState();
         int status = renderTemplate(state, fullDust, dustTemplate, dustContext);

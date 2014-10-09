@@ -41,6 +41,15 @@ includedirs({"src"})
 files({"src/main.cpp"
 })
 
+project("cppperf")
+kind("ConsoleApp")
+language("C++")
+buildoptions({"-std=c++11"})
+links({"v8", "dustshim"})
+includedirs({"src"})
+files({"src/performance.cpp"
+})
+
 project("JDust")
 kind("SharedLib")
 language("C++")
@@ -55,4 +64,5 @@ files({"java/JDust.cpp"
        , "java/JStore.cpp"
 })
 compile_java({"buzz/fizz/jdust/JDust.java"
-              , "buzz/fizz/jdust/JState.java"})
+              , "buzz/fizz/jdust/JState.java"
+              , "buzz/fizz/jdust/JPerformanceTest.java"})
