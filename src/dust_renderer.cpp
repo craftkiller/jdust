@@ -25,7 +25,7 @@ namespace
         HandleScope handle_scope(isolate);
 
         // Create a template for the global object.
-        v8::Handle<v8::ObjectTemplate> global = v8::ObjectTemplate::New(isolate);
+        Local<ObjectTemplate> global = ObjectTemplate::New(isolate);
 
         // Create a new context.
         Local<Context> context = Context::New(isolate, nullptr, global);
@@ -33,7 +33,7 @@ namespace
         // Enter the context for compiling and running the hello world script.
         Context::Scope context_scope(context);
 
-        Handle<Object> v8_state = wrap_out_streams(isolate, &out);
+        Local<Object> v8_state = wrap_out_streams(isolate, &out);
         context->Global()->Set(String::NewFromUtf8(isolate, "console"), v8_state);
 
         for (auto const & entry : global_vars)
