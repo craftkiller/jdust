@@ -3,7 +3,6 @@
  * https://github.com/craftkiller/jdust
  */
 #include "out_streams.h"
-#include <iostream>
 
 using namespace v8;
 
@@ -32,7 +31,6 @@ namespace
         {
             v8::String::Utf8Value str(args[i]);
             std::string error = std::string(*str);
-            std::cerr << error << "\n";
             state->store_error(error);
         }
     }
