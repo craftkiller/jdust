@@ -72,18 +72,10 @@ namespace
 
 Handle<Object> wrap_out_streams(Isolate* isolate, out_streams* store)
 {
-    static Persistent<ObjectTemplate> store_template_;
-
     // Handle scope for temporary handles.
     EscapableHandleScope handle_scope(isolate);
 
-    // Fetch the template
-    // It only has to be created once, which we do on demand.
-    if (store_template_.IsEmpty()) {
-        Handle<ObjectTemplate> raw_template = make_out_streams_template(isolate);
-        store_template_.Reset(isolate, raw_template);
-    }
-    Handle<ObjectTemplate> templ = Local<ObjectTemplate>::New(isolate, store_template_);
+    Handle<ObjectTemplate> templ = make_out_streams_template(isolate);
     templ->Set(String::NewFromUtf8(isolate, "error"), FunctionTemplate::New(isolate, set_error));
     templ->Set(String::NewFromUtf8(isolate, "store"), FunctionTemplate::New(isolate, set_result));
     templ->Set(String::NewFromUtf8(isolate, "log"), FunctionTemplate::New(isolate, set_error));

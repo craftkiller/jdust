@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         script_contents[i-1] = load_file(argv[i]);
     }
 
-    for (int i = 0; i < 100000; ++i)
+    for (int i = 0; i < 1000; ++i)
     {
         result_store state;
         render_template(state, script_contents[0].c_str(), script_contents[1].c_str(), "{'title': 'Hello Title'}");

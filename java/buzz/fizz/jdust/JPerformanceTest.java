@@ -29,7 +29,7 @@ public class JPerformanceTest
         String fullDust = readFile(args[0]);
         String dustTemplate = readFile(args[1]);
         JDust dust = new JDust();
-        for (int i = 0; i < 100000; ++i)
+        for (int i = 0; i < 1000; ++i)
         {
             dust.renderDust(fullDust, dustTemplate, "{'title': 'Hello Title'}");
         }
